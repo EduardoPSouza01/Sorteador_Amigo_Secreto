@@ -1,21 +1,21 @@
 let amigos = [];
 
 function adicionar() {
-    let amigo = document.getElementById('nome-amigo');
+    let amigo = document.getElementById('nome-amigo').value.toUpperCase();
     let lista = document.getElementById('lista-amigos');
 
-    if(amigo.value == ''){
+    if(amigo == ''){
         alert('Informe o nome do amigo');
         return;
     }
-    if(amigos.includes(amigo.value)){
+    if(amigos.includes(amigo)){
         alert('O nome ja consta na lista de Sorteio!!');
     }else{
-        amigos.push(amigo.value);
+        amigos.push(amigo);
         if (lista.textContent == '') {
-            lista.textContent = amigo.value;
+            lista.textContent = amigo;
         } else {
-            lista.textContent = lista.textContent + ', ' + amigo.value;
+            lista.textContent = lista.textContent + ', ' + amigo;
         }
     }
 
